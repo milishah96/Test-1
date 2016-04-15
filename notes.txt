@@ -1,0 +1,31 @@
+from __future__ import print_function,with_statement
+
+
+
+
+
+
+class DataFrame(list):    
+    
+    def __init__(self,*kwargs):
+        if kwargs:
+            list.__init__(self,*kwargs)
+
+    def __getattr__(self,item):
+        print(item)
+        if self[item]:
+            return self[item]    
+    def __lt__(self,expr):
+        return expr
+        
+
+    def __ge__(self,expr):
+        return expr
+    
+    def __gt__(self,expr):
+        return expr 
+        
+    def __eq__(self,expr):
+        return expr
+        
+test = DataFrame([1,2,3,4])
